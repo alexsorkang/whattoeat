@@ -1,9 +1,15 @@
 var express = require('express');
-var router = express.Router();
+var app = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+// app.get('/', function(req, res, next) {
+//   var foods = {'asian':['korean', 'chinese', 'japanese', 'vietnamese', 'thai'], 'american': ['american bbq', 'hamburger'], 'mexican': ['taco', 'burrito']};
+//   res.render('index', { title: 'What should I eat?', foods: foods});
+// });
+
+app.get('/', (req, res) => {
+  var foods = {'asian':['korean', 'chinese', 'japanese', 'vietnamese', 'thai'], 'american': ['american bbq', 'hamburger'], 'mexican': ['taco', 'burrito']};
+  res.render('index', { title: 'What should I eat?', foods: foods});
 });
 
-module.exports = router;
+module.exports = app;

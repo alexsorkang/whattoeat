@@ -7,5 +7,18 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <ul>
+    <% for (food in foods) { %>
+      <li><%= food %>
+        <ul>
+        <% foods[food].forEach(function(key) { %>
+          <li>
+            <%= key %> 
+          </li>
+        <% }) %>
+        </ul>
+      </li>
+    <% } %>
+    </ul>
   </body>
 </html>
